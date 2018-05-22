@@ -1,4 +1,4 @@
-# My [maid](https://github.com/hannesbe/maid) rules config - h@nnes.be 
+# My [maid](https://github.com/hannesbe/maid-config) rules config - h@nnes.be 
 # 
 # Run using:
 #
@@ -78,14 +78,22 @@ Maid.rules do
 # Move .PDF files from G-Drive to Nextcloud
   rule 'Move files in G-Drive to Nextcloud' do
     move(dir('~/G-Drive/_IN/connexeon.com/F&A/*'), '~/Nextcloud/_connexeon.com/F&A/_IN')
-    move(dir('~/G-Drive/_IN/connexeon.com/*'), '~/Nextcloud/_connexeon.com/_IN')
-    move(dir('~/G-Drive/_IN/Connexeon/Ops/*'), '~/Nextcloud/_Connexeon/Ops/_IN')
+    move(dir('~/G-Drive/_IN/connexeon.com/OPS/*'), '~/Nextcloud/_connexeon.com/OPS/_IN')
+    move(dir('~/G-Drive/_IN/connexeon.com/_/*'), '~/Nextcloud/_connexeon.com/_IN')
+    move(dir('~/G-Drive/_IN/Connexeon/OPS/*'), '~/Nextcloud/_Connexeon/OPS/_IN')
     move(dir('~/G-Drive/_IN/Connexeon/F&A/*'), '~/Nextcloud/_Connexeon/F&A/_IN')
-    move(dir('~/G-Drive/_IN/Connexeon/*'), '~/Nextcloud/_Connexeon/_IN')
+    move(dir('~/G-Drive/_IN/Connexeon/_/*'), '~/Nextcloud/_Connexeon/_IN')
     move(dir('~/G-Drive/_IN/Finmo/F&A/*'), '~/Nextcloud/_Finmo/F&A/_IN')
+    move(dir('~/G-Drive/_IN/Finmo/OPS/*'), '~/Nextcloud/_Finmo/OPS/_IN')
+    move(dir('~/G-Drive/_IN/Finmo/_/*'), '~/Nextcloud/_Finmo/_IN')
     move(dir('~/G-Drive/_IN/Kay/F&A/*'), '~/Nextcloud/_Kay/F&A/_IN')
-    move(dir('~/G-Drive/_IN/Kay/Ops/*'), '~/Nextcloud/_Kay/Ops/_IN')
+    move(dir('~/G-Drive/_IN/Kay/OPS/*'), '~/Nextcloud/_Kay/OPS/_IN')
+    move(dir('~/G-Drive/_IN/Kay/MER/*'), '~/Nextcloud/_Kay/MER/_IN')
+    move(dir('~/G-Drive/_IN/Kay/M&C/*'), '~/Nextcloud/_Kay/M&C/_IN')
+    move(dir('~/G-Drive/_IN/Kay/_/*'), '~/Nextcloud/_Kay/_IN')
     move(dir('~/G-Drive/_IN/Nexus/F&A/*'), '~/Nextcloud/_Nexus/F&A/_IN')
+    move(dir('~/G-Drive/_IN/Nexus/OPS/*'), '~/Nextcloud/_Nexus/OPS/_IN')
+    move(dir('~/G-Drive/_IN/Nexus/_/*'), '~/Nextcloud/_Nexus/_IN')
     move(dir('~/G-Drive/_IN/Bricks/Cadiz50/*'), '~/Nextcloud/_Bricks/Cadiz50/_IN')
     move(dir('~/G-Drive/_IN/Bricks/Viaduct132/*'), '~/Nextcloud/_Bricks/Viaduct132/_IN')
     move(dir('~/G-Drive/_IN/Bricks/London993/*'), '~/Nextcloud/_Bricks/London993/_IN')
@@ -117,13 +125,12 @@ Maid.rules do
       'gif' => 'Images',
       'GIF' => 'Images',
     }.each do |ext, directory|
-      ext_path = "~/Nextcloud/Mail Att/#{ directory }"
+      ext_path = "~/Nextcloud/_IN/Mail Att/#{ directory }"
 
-      dir("~/Nextcloud/Mail Att/*.#{ ext }").each do |path|
+      dir("~/Nextcloud/_IN/Mail Att/*.#{ ext }").each do |path|
           mkdir(ext_path)
           move(path, ext_path)
       end
     end
   end  
-  
 end
