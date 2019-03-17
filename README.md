@@ -2,9 +2,33 @@
 
 My [maid](https://github.com/hannesbe/maid) rules config - h@nnes.be 
 
-Run using:
+Run a dryrun to see what would happen:
 
-`maid clean -n`
+`maid clean --dry-run`
+
+Run manually: 
+
+`maid clean --force && tail ~/.maid/maid.log`
+
+Create a cron to schedule it: 
+
+Edit your crontab using: 
+
+```
+crontab -e
+```
+
+This examples adds a schedule twice a day (5AM and 5PM)
+
+```
+0 5,17 * * * /usr/local/bin/maid clean --force --silent
+```
+
+Save, exit & verify the newly added schedule: 
+
+```
+crontab -l
+``` 
 
 For more help on Maid:
 
