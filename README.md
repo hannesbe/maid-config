@@ -32,6 +32,6 @@ crontab -l
 
 For more help on Maid:
 
--  Run `maid help`
--  Read the README, tutorial, and documentation https://github.com/hannesbe/maid-config
--  Check out how others are using Maid in [the Maid wiki](https://github.com/hannesbe/maid-config/wiki)
+-   Run `maid help`
+-   Read the [README, tutorial, and documentation] (https://github.com/hannesbe/maid-config)
+-   Check out how others are using Maid in [the Maid wiki](https://github.com/hannesbe/maid-config/wiki)
