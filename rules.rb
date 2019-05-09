@@ -101,6 +101,72 @@ Maid.rules do
     move(dir('~/G-Drive/_IN/Personal/*'), '~/Nextcloud/_Personal/_IN')
   end
 
+  # This rules organizes downloads into subdirectories by some common file types. 
+  rule 'Organize downloads by file extension' do
+    {
+      'iso' => 'Software',
+      'ISO' => 'Software',
+      'img' => 'Software',
+      'img.gz' => 'Software',
+      'spk' => 'Software',
+      'torrent' => 'Torents',
+      'ics' => 'Calendar',
+      'zip'  => 'Archives',
+      'tar'  => 'Archives',
+      'rar'  => 'Archives',
+      '7z'  => 'Archives',
+      'tar.gz'  => 'Archives',
+      'unf'  => 'Backups',
+      'unms'  => 'Backups',
+      'seb'  => 'Backups',
+      'dss'  => 'Backups',
+      'mp4'  => 'Videos',
+      '3gp'  => 'Videos',
+      'mov'  => 'Videos',
+      'MOV'  => 'Videos',
+      'AppImage' => 'Apps',
+      'flatpakref' => 'Apps',
+      'pkg'  => 'Apps',
+      'deb'  => 'Apps',
+      'dmg'  => 'Apps',
+      'apk'  => 'Apps',
+      'tgz'  => 'Apps',
+      'exe'  => 'Apps',
+      'msi'  => 'Apps',
+      'vsix'  => 'Extensions',
+      'csv' => 'Data',
+      'json'  => 'Data',
+      'log'  => 'Logs',
+      'htm'  => 'Web',
+      'html'  => 'Web',
+      'css'  => 'Web',
+      'vcf'  => 'Contacts',  
+      'docx' => 'Documents',
+      'doc' => 'Documents',
+      'txt' => 'Documents',
+      'md' => 'Documents',
+      'epub' => 'Documents',
+      'xlsx' => 'Spreadsheets',
+      'xls' => 'Spreadsheets',
+      'ods' => 'Spreadsheets',
+      'pptx' => 'Presentations',
+      'jpg' => 'Images',
+      'JPG' => 'Images',
+      'png' => 'Images',
+      'PNG' => 'Images',
+      'gif' => 'Images',
+      'GIF' => 'Images',
+      'svg' => 'Images',
+    }.each do |ext, directory|
+      ext_path = "~/Downloads/#{ directory }"
+
+      dir("~/Downloads/*.#{ ext }").each do |path|
+          mkdir(ext_path)
+          move(path, ext_path)
+      end
+    end
+  end 
+  
   # E-mail attachment are automatically saved to a flat folder. 
   # This rules organizes these files into subdirectories by some common file types. 
   rule 'Organize e-mail attachments by file extension' do
