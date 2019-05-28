@@ -120,6 +120,7 @@ Maid.rules do
       'unms'  => 'Backups',
       'seb'  => 'Backups',
       'dss'  => 'Backups',
+      'mp3'  => 'Music',
       'mp4'  => 'Videos',
       '3gp'  => 'Videos',
       'mov'  => 'Videos',
