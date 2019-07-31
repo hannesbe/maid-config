@@ -1,34 +1,33 @@
 # maid rules config
 
-My [maid](https://github.com/hannesbe/maid) rules config - h@nnes.be 
+> My [maid](https://github.com/hannesbe/maid) rules config - h@nnes.be 
 
-Run a dryrun to see what would happen:
+- Install Maid & clone config
+  `sudo gem install maid`
+  `git clone https://github.com/hannesbe/maid-config ~/.maid`
 
-`maid clean --dry-run`
+- Run a dryrun to see what would happen:
+  `maid clean --dry-run`
 
-Run manually: 
+- Run manually: 
+  `maid clean --force && tail ~/.maid/maid.log`
 
-`maid clean --force && tail ~/.maid/maid.log`
+- Create a cron to schedule it: 
 
-Create a cron to schedule it: 
+  - Edit your crontab using: 
+    ```
+    crontab -e
+    ```
+    This examples adds a schedule twice a day (5AM and 5PM)
+    ```
+    0 5,17 * * * /usr/local/bin/maid clean --force --silent
+    ```
+    Save, exit & verify the newly added schedule: 
+    ```
+    crontab -l
+    ``` 
 
-Edit your crontab using: 
-
-```
-crontab -e
-```
-
-This examples adds a schedule twice a day (5AM and 5PM)
-
-```
-0 5,17 * * * /usr/local/bin/maid clean --force --silent
-```
-
-Save, exit & verify the newly added schedule: 
-
-```
-crontab -l
-``` 
+---
 
 For more help on Maid:
 
