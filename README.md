@@ -8,7 +8,7 @@
   git clone https://github.com/hannesbe/maid-config ~/.maid
   ```
 
-- Run a dryrun to see what would happen:
+- Run a dry-run to see what would happen:
   ```
   maid clean --dry-run
   ```  
