@@ -24,10 +24,12 @@
     ```
     crontab -e
     ```
+    
     This examples adds a schedule twice a day (5AM and 5PM)
     ```
     0 5,17 * * * /usr/local/bin/maid clean --force --silent
     ```
+    
     Save, exit & verify the newly added schedule: 
     ```
     crontab -l
@@ -38,5 +40,5 @@
 For more help on Maid:
 
 -   Run `maid help`
--   Read the [README, tutorial, and documentation] (https://github.com/hannesbe/maid-config)
--   Check out how others are using Maid in [the Maid wiki](https://github.com/hannesbe/maid-config/wiki)
+-   Read [the Maid README](https://github.com/benjaminoakes/maid/blob/master/README.md), [tutorial](https://github.com/benjaminoakes/maid/blob/master/README.md#tutorial), and [documentation](http://www.rubydoc.info/github/benjaminoakes/maid/master/Maid/Tools)
+-   Check out how others are using Maid in [the Maid wiki](https://github.com/benjaminoakes/maid/wiki)
