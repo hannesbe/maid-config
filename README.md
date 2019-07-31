@@ -1,4 +1,4 @@
-# maid rules config
+# Maid config rules
 
 > My [maid](https://github.com/benjaminoakes/maid) config rules 
 
