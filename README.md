@@ -1,16 +1,22 @@
 # maid rules config
 
-> My [maid](https://github.com/hannesbe/maid) rules config - h@nnes.be 
+> My [maid](https://github.com/benjaminoakes/maid) config rules 
 
 - Install Maid & clone config
-  `sudo gem install maid`
-  `git clone https://github.com/hannesbe/maid-config ~/.maid`
+  ```
+  sudo gem install maid
+  git clone https://github.com/hannesbe/maid-config ~/.maid
+  ```
 
 - Run a dryrun to see what would happen:
-  `maid clean --dry-run`
+  ```
+  maid clean --dry-run
+  ```  
 
 - Run manually: 
-  `maid clean --force && tail ~/.maid/maid.log`
+  ```
+  maid clean --force && tail ~/.maid/maid.log
+  ```  
 
 - Create a cron to schedule it: 
 
